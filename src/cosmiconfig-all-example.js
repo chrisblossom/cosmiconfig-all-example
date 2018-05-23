@@ -30,4 +30,31 @@ async function cosmiconfigAllExample(searchPath) {
     return results;
 }
 
-export { cosmiconfigAllExample };
+function cosmiconfigAllExampleSync(searchPath) {
+    const results = [];
+    function getNext(currentPath) {
+        const currentResult = explorer.searchSync(currentPath);
+
+        // if no result found, end search
+        if (!currentResult) {
+            return;
+        }
+
+        // add current result to end of array
+        results.push(currentResult);
+
+        const parsedFilePath = path.parse(currentResult.filepath);
+
+        // Get the next parent directory
+        const nextPath = path.resolve(parsedFilePath.dir, '../');
+
+        // eslint-disable-next-line consistent-return
+        return getNext(nextPath);
+    }
+
+    getNext(searchPath);
+
+    return results;
+}
+
+export { cosmiconfigAllExample, cosmiconfigAllExampleSync };
