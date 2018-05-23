@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`finds all configs 1`] = `
+Array [
+  Object {
+    "config": Object {
+      "example": "e",
+    },
+    "filepath": "<PROJECT_ROOT>/src/__sandbox__/a/b/c/d/e/example.config.js",
+  },
+  Object {
+    "config": Object {
+      "example": "d",
+    },
+    "filepath": "<PROJECT_ROOT>/src/__sandbox__/a/b/c/d/example.config.js",
+  },
+  Object {
+    "config": Object {
+      "example": "b",
+    },
+    "filepath": "<PROJECT_ROOT>/src/__sandbox__/a/b/example.config.js",
+  },
+  Object {
+    "config": Object {
+      "example": "a",
+    },
+    "filepath": "<PROJECT_ROOT>/src/__sandbox__/a/example.config.js",
+  },
+]
+`;

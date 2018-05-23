@@ -1,0 +1,56 @@
+{
+  "name": "cosmiconfig-all-example",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "engines": {
+    "node": ">=6.9.0",
+    "npm": ">=3.10.10",
+    "yarn": ">=1.6.0"
+  },
+  "devEngines": {
+    "node": ">=8.9.0",
+    "npm": ">=5.5.1"
+  },
+  "files": [
+    "dist/"
+  ],
+  "main": "dist/cosmiconfig-all-example.js",
+  "scripts": {
+    "build": "backtrack build --production",
+    "check-all": "backtrack check-all",
+    "clean": "backtrack clean",
+    "dev": "backtrack dev --development",
+    "format": "backtrack format",
+    "lint": "backtrack lint",
+    "lint.fix": "backtrack lint.fix",
+    "precommit": "backtrack precommit",
+    "prepublishOnly": "backtrack prepublishOnly",
+    "prepush": "backtrack prepush",
+    "test": "backtrack test",
+    "test.ci": "backtrack test.ci",
+    "test.ci-pretest": "backtrack test.ci-pretest",
+    "test.update": "jest --updateSnapshot",
+    "test.watch": "jest --watch"
+  },
+  "lint-staged": {
+    "*.{js,md,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "./.babelrc.js"
+    ]
+  },
+  "devDependencies": {
+    "@backtrack/core": "^0.1.18",
+    "@backtrack/preset-node-module": "^0.1.11"
+  },
+  "dependencies": {
+    "cosmiconfig": "^5.0.4"
+  }
+}
